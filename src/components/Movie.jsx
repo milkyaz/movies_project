@@ -8,15 +8,15 @@ function Movie(props) {
   } = props;
 
   return (
-    <div className="card">
+    <div id={id} className="card movie">
       <div className="card-image waves-effect waves-block waves-light">
         {poster === "N/A" ? (
-          <img
+          <img alt="alt"
             className="activator"
-            src={`https://placehold.co/300x400?text=${title}`}
+            src={`https://via.placeholder.com/300x400?text=${title}`}
           />
         ) : (
-          <img className="activator" src={poster} />
+          <img alt="alt" className="activator" src={poster} />
         )}
       </div>
       <div className="card-content">
