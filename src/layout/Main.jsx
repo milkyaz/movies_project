@@ -15,8 +15,12 @@ class Main extends Component {
   }
 
   //функция которую можно спустить вниз и которая обновляет state
-  searchMovies = (str) => {
-    fetch(`http://www.omdbapi.com/?apikey=9affed6f&s=${str}`)
+  searchMovies = (str, type = "all") => {
+    fetch(
+      `http://www.omdbapi.com/?apikey=9affed6f&s=${str}${
+        type !== "all" ? `&type=${type}` : ""
+      }`
+    )
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search }));
   };
